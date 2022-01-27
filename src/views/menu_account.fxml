@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="380.0" prefWidth="609.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MenuAccountController">
+   <children>
+      <Pane prefHeight="380.0" prefWidth="609.0" style="-fx-background-color: RED;">
+         <children>
+            <VBox prefHeight="380.0" prefWidth="347.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#clickCashDrawerPage" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: #fff;" text="Зняти готівку" textAlignment="CENTER" textFill="RED">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="60.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#showBalanceOfPerson" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: #fff;" text="Переглянути баланс" textFill="RED">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="40.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#clickClose" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: #fff;" text="Скасувати" textFill="RED">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="40.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
