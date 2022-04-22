@@ -6,6 +6,8 @@ import javafx.collections.ObservableList;
 import main.Main;
 import model.OperationItem;
 import model.Person;
+import security.AESUtils;
+import security.CryptoControl;
 
 import java.io.IOException;
 import java.sql.*;
@@ -46,7 +48,9 @@ public class DataBaseHandler {
 
     public static boolean checkPinCode(String numberCode, String pincode) throws SQLException {
         Statement stmt = getConnection().createStatement();
-        ResultSet rs = stmt.executeQuery("SELECT * FROM card WHERE number = '" + numberCode + "' AND pincode = '" + pincode + "'");
+
+        String encryptPinCode = AESUtils.encrypt(pincode, CryptoControl.secretKeyForPinCode);
+        ResultSet rs = stmt.executeQuery("SELECT * FROM card WHERE number = '" + numberCode + "' AND pincode = '" + encryptPinCode + "'");
 
         while (rs.next()) {
             String number = rs.getString("number");
